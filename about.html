@@ -48,7 +48,7 @@
 </head>
 <body class="bg-[#0F2E4A] text-white">
 
-    <!-- HEADER WITH HAMBURGER -->
+    <!-- HEADER (EXACT SAME AS INDEX) -->
     <nav class="sticky top-0 z-50 bg-[#0F2E4A] border-b border-[#1A3A5C]">
         <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
             <a href="index.html">
@@ -100,9 +100,10 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (FIXED - DISCLAIMER HAS SAME PADDING AS CITIES ON MOBILE) -->
     <footer class="bg-[#0F2E4A] py-20 border-t border-[#1A3A5C]">
         <div class="max-w-full px-6">
+            <!-- Cities (no extra padding) -->
             <div class="flex flex-wrap justify-center gap-x-12 gap-y-2 text-white text-base mb-12">
                 <div>Palo Alto</div>
                 <div>New York</div>
@@ -114,6 +115,7 @@
                 <a href="privacy.html" class="hover:text-gray-300 transition">Privacy</a>
             </div>
 
+            <!-- Disclaimer - SAME PADDING AS CITIES ON MOBILE -->
             <div class="px-6">
                 <div class="text-white text-sm leading-relaxed mb-8 text-left">
                     Unless otherwise specified, all communications and content on this website are issued by Canyon Global. This website is provided for general information purposes only and is subject to change without notice. The information contained herein does not constitute an offer, solicitation, or invitation to buy or sell any securities or investment products, nor does it constitute investment advisory services, a personal recommendation, or an invitation to engage in any transaction. Nothing on this website should be relied upon in connection with any investment decision. The information provided is not intended to, and does not, constitute financial, accounting, tax, legal, investment, or other professional advice or services. Prospective investors should consult with their own independent legal, tax, financial, and other professional advisors before making any investment.
@@ -146,4 +148,4 @@
         closeBtn.addEventListener('click', closeMenu);
     </script>
 </body>
-</html> 
+</html>
