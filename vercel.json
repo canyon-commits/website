@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/about", "destination": "/about.html", "statusCode": 200 },
+    { "source": "/contact", "destination": "/contact.html", "statusCode": 200 },
+    { "source": "/privacy", "destination": "/privacy.html", "statusCode": 200 }
+  ]
+}
