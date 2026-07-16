@@ -36,34 +36,34 @@
 <body class="bg-[#0F2E4A] text-white">
 
     <!-- HEADER -->
- <nav class="sticky top-0 z-50 bg-[#0F2E4A] border-b border-[#1A3A5C]">
-            <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-                <a href="/">
-                    <img src="logo.svg" alt="Canyon Global" class="h-9 w-auto">
-                </a>
-                <button id="hamburger" class="hamburger">
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </nav>
+    <nav class="sticky top-0 z-50 bg-[#0F2E4A] border-b border-[#1A3A5C]">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="/">
+                <img src="logo.svg" alt="Canyon Global" class="h-9 w-auto">
+            </a>
+            <button id="hamburger" class="hamburger">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-[#0F2E4A] z-[60] flex flex-col">
-            <div class="flex justify-end p-8">
-                <button id="close-menu" class="text-white text-3xl leading-none font-light hover:text-gray-300">✕</button>
-            </div>
-            <div class="flex-1 flex items-center justify-center">
-                <div class="flex flex-col items-center gap-12 text-[32px] font-medium text-center">
-                    <a href="/about" onclick="closeMenu()" class="hover:text-white">About Canyon</a>
-                    <a href="/contact" onclick="closeMenu()" class="hover:text-white">Contact</a>
-                </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#0F2E4A] z-[60] flex flex-col">
+        <div class="flex justify-end p-8">
+            <button id="close-menu" class="text-white text-3xl leading-none font-light hover:text-gray-300">✕</button>
+        </div>
+        <div class="flex-1 flex items-center justify-center">
+            <div class="flex flex-col items-center gap-12 text-[32px] font-medium text-center">
+                <a href="/about" onclick="closeMenu()" class="hover:text-white">About Canyon</a>
+                <a href="/contact" onclick="closeMenu()" class="hover:text-white">Contact</a>
             </div>
         </div>
+    </div>
 
-    <!-- DARK BLUE SECTION -->
-    <div class="bg-[#0F2E4A]">
-        <div class="max-w-4xl mx-auto px-6 pt-24 pb-48">
+    <!-- DARK BLUE SECTION - FORCED TALL -->
+    <div class="bg-[#0F2E4A] min-h-[80vh]">
+        <div class="max-w-4xl mx-auto px-6 pt-24">
             
             <h1 class="text-[32px] sm:text-[38px] md:text-[42px] font-medium leading-[1.55] tracking-[-0.02em] mb-8 text-white">
                 Contact
