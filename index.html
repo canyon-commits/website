@@ -166,5 +166,22 @@
 
         closeBtn.addEventListener('click', closeMenu);
     </script>
+
+      <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:100;background:#ffffff;color:#0F2E4A;border-top:1px solid #e5e7eb;box-shadow:0 -8px 24px rgba(15,46,74,0.12);">
+    <div style="max-width:80rem;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;">
+        <p style="margin:0;font-size:14px;line-height:1.5;color:#0F2E4A;">
+            We use cookies to personalize content, run ads, and analyze traffic.
+        </p>
+        <button type="button" onclick="this.parentElement.parentElement.style.display='none';localStorage.setItem('canyonCookiesAccepted','true');" style="background:#0F2E4A;color:#ffffff;border:none;border-radius:9999px;padding:10px 24px;font-size:14px;font-weight:500;cursor:pointer;">
+            Okay
+        </button>
+    </div>
+</div>
+<script>
+    if (localStorage.getItem('canyonCookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+</script>
+          
 </body>
 </html>
