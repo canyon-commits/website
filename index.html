@@ -96,9 +96,9 @@ header{animation:hdrin .9s cubic-bezier(.22,1,.36,1)}
 
 /* ===== Page heroes — TB About: ghost outline title behind a thin caps H1 ===== */
 .hero-page{position:relative;padding:170px 0 90px;text-align:left;overflow:hidden}
-.hero-page h1{position:relative;font-size:clamp(42px,6vw,88px);font-weight:200;text-transform:uppercase;letter-spacing:.12em;line-height:1.18;color:#fff}
+.hero-page h1{position:relative;font-size:clamp(42px,6vw,88px);font-weight:200;text-transform:uppercase;letter-spacing:.04em;line-height:1.18;color:#fff}
 .hero-short{padding:170px 0 90px}
-.hero-short h1{font-size:clamp(32px,4.4vw,58px);font-weight:200;letter-spacing:.12em;line-height:1.18}
+.hero-short h1{font-size:clamp(32px,4.4vw,58px);font-weight:200;letter-spacing:.04em;line-height:1.18}
 
 /* ===== About intro — TB: left column ~640px, body 17px / 1.65 white ===== */
 .intro{padding:0 0 48px}
@@ -110,9 +110,9 @@ header{animation:hdrin .9s cubic-bezier(.22,1,.36,1)}
 .acc:last-child{margin-bottom:0}
 .acc{background:var(--grey-grad);border-radius:28px;margin-bottom:28px;overflow:hidden}
 .acc-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:44px 60px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
-.acc-head h2{font-size:clamp(26px,3vw,40px);font-weight:200;text-transform:uppercase;letter-spacing:.12em;line-height:1.18;color:#000}
-.acc-ic{position:relative;width:32px;height:32px;flex:none;border:1.5px solid #555;border-radius:50%}
-.acc-ic::before,.acc-ic::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:#555;transform:translate(-50%,-50%)}
+.acc-head h2{font-size:clamp(26px,3vw,40px);font-weight:200;text-transform:uppercase;letter-spacing:.04em;line-height:1.18;color:#000}
+.acc-ic{position:relative;width:32px;height:32px;flex:none}
+.acc-ic::before,.acc-ic::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:#000;transform:translate(-50%,-50%)}
 .acc-ic::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s ease}
 .acc.open .acc-ic::after{transform:translate(-50%,-50%) rotate(0deg)}
 .acc-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,.61,.36,1)}
@@ -123,14 +123,14 @@ header{animation:hdrin .9s cubic-bezier(.22,1,.36,1)}
 /* ===== Contact — TB Get in Touch: left title + copy, right grey panel with the offices ===== */
 .contact-sec{position:relative;padding:170px 0 90px;overflow:hidden}
 .contact-sec .contact-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}.contact-sec .contact-grid>*{min-width:0}
-.contact-grid h1{font-size:42px;font-weight:200;text-transform:uppercase;letter-spacing:.12em;line-height:1.18;margin:0 0 90px}
+.contact-grid h1{font-size:42px;font-weight:200;text-transform:uppercase;letter-spacing:.04em;line-height:1.18;margin:0 0 90px}
 .contact-grid .lead{font-size:16.5px;line-height:1.7;color:var(--ink);max-width:520px}
 .contact-grid .lead a{text-decoration:underline;text-underline-offset:4px}
 .contact-grid .lead a:hover{color:#fff}
 .offices-panel{background:var(--grey-grad);border-radius:28px;padding:56px 60px}
 .offices-panel .eyebrow{color:#000;margin-bottom:30px;font-size:13px;font-weight:500}
 .offices-panel ul{list-style:none}
-.offices-panel li{font-size:clamp(26px,3vw,40px);font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:#000;padding:20px 0;border-top:1px solid rgba(0,0,0,.18)}
+.offices-panel li{font-size:clamp(26px,3vw,40px);font-weight:300;letter-spacing:.04em;text-transform:uppercase;color:#000;padding:20px 0;border-top:1px solid rgba(0,0,0,.18)}
 .offices-panel li:first-child{border-top:none;padding-top:0}
 .offices-panel li:last-child{padding-bottom:0}
 @media(max-width:900px){.contact-sec .contact-grid{grid-template-columns:1fr;gap:48px}.offices-panel{padding:40px 32px}}
@@ -163,9 +163,21 @@ nav.main a{font-family:"Gotham","Montserrat",sans-serif;font-weight:500}
 body.past header{background:#000}
 body.past.menu-open header{background:transparent}
 .fmenu a{font-family:"Gotham","Montserrat",sans-serif;font-weight:400}
-#view-privacy .text-col p,#view-privacy .text-col h2,#view-privacy .text-col .eff{color:#fff}
+body[data-route="privacy"],body[data-route="disclaimer"]{background:#fff}
+body[data-route="privacy"] .hero-page h1,body[data-route="disclaimer"] .hero-page h1{color:#000}
+body[data-route="privacy"] .text-col p,body[data-route="disclaimer"] .text-col p{color:#1c1c1e}
+body[data-route="privacy"] .text-col h2,body[data-route="disclaimer"] .text-col h2{color:#000}
+body[data-route="privacy"] .text-col .eff,body[data-route="disclaimer"] .text-col .eff{color:#666}
+body[data-route="privacy"] .logo,body[data-route="disclaimer"] .logo{color:#000}
+body[data-route="privacy"] nav.main a,body[data-route="disclaimer"] nav.main a{color:#333}
+body[data-route="privacy"] #burger i,body[data-route="disclaimer"] #burger i{background:#000}
+body.past[data-route="privacy"] header,body.past[data-route="disclaimer"] header{background:#fff}
+.rule{height:1px;background:#A3A3A3;margin-bottom:56px}
 @media(max-width:900px){.hero-short h1{font-size:clamp(29px,5.1vw,72px)}.hero-page h1,.contact-grid h1{font-size:clamp(34px,5.8vw,88px)}.acc-head h2,.offices-panel li{font-size:22px}.offices-panel li{font-family:"Gotham","Montserrat",sans-serif;font-weight:300}}
 @media(min-width:901px){.hero-quote{font-size:clamp(44px,4.2vw,58px);max-width:1080px}.hero-page{padding:150px 0 70px}.hero-page h1{font-size:clamp(40px,4.6vw,64px)}.hero-short h1{font-size:clamp(34px,3.6vw,50px)}.acc{margin-bottom:20px}.acc-head{padding:30px 44px}.acc-head h2{font-size:clamp(22px,2vw,30px)}.acc-ic{width:28px;height:28px}.acc-body p{padding:0 44px 40px;max-width:760px}.panels{padding-bottom:90px}.contact-grid h1{font-size:38px}.offices-panel{padding:44px 48px}.offices-panel li{font-size:clamp(22px,2vw,30px);padding:16px 0}.fwrap{padding-top:80px}.wrap-narrow.panels{max-width:1060px}#view-about .wrap-narrow,#view-contact .wrap-narrow{max-width:1060px}#view-about .hero-page{padding-top:128px}.contact-sec{padding-top:150px}}
+/* Sfumatura titles — same gradient as the home headline */
+#view-about .hero-page h1,.contact-grid h1{background:linear-gradient(90deg,#DEDEDE 0%,#868686 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.acc-head h2{background:linear-gradient(90deg,#141414 0%,#6E6E6E 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 </style>
 </head>
 <body data-route="home">
@@ -249,6 +261,7 @@ body.past.menu-open header{background:transparent}
     <div class="text-col" style="padding-bottom:0"><h1>Privacy Notice</h1></div>
   </div>
   <div class="text-col">
+      <div class="rule"></div>
       <p class="eff">Effective Date: November 2026</p>
       <p>This Privacy Notice is issued by Canyon Global (“Canyon”, “we”, “us”). We are the data controller of the personal information described below.</p>
       <h2>INFORMATION WE COLLECT</h2>
@@ -288,6 +301,7 @@ body.past.menu-open header{background:transparent}
     <div class="text-col" style="padding-bottom:0"><h1>Disclaimer</h1></div>
   </div>
   <div class="text-col">
+      <div class="rule"></div>
       <p>Unless otherwise specified, all communications and content on this website are issued by Canyon Global. This website is provided for general information purposes only and is subject to change without notice. The information contained herein does not constitute an offer, solicitation, or invitation to buy or sell any securities or investment products, nor does it constitute investment advisory services, a personal recommendation, or an invitation to engage in any transaction. Nothing on this website should be relied upon in connection with any investment decision. The information provided is not intended to, and does not, constitute financial, accounting, tax, legal, investment, or other professional advice or services. Prospective investors should consult with their own independent legal, tax, financial, and other professional advisors before making any investment.</p>
   </div>
 </main>
@@ -322,6 +336,7 @@ function show(route){
   document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});
   var el=document.getElementById('view-'+route); if(el)el.classList.add('active');
   document.body.setAttribute('data-route',route);
+  document.documentElement.style.background=(route==='privacy'||route==='disclaimer')?'#fff':'#000';
   document.title=route==='home'?'Canyon Global | Global Technology Investor':(route==='about'?'About Canyon - Canyon Global':(route==='contact'?'Contact - Canyon Global':(route==='privacy'?'Privacy Notice - Canyon Global':'Disclaimer - Canyon Global')));
   document.querySelectorAll('#mmenu a[data-route]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-route')===route)});
   window.scrollTo(0,0);
