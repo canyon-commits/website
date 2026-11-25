@@ -197,18 +197,18 @@ footer{flex:none}
 
 <header>
   <div class="hbar">
-    <a href="#home" data-route="home" class="logo">CANYON GLOBAL</a>
+    <a href="/" data-route="home" class="logo">CANYON GLOBAL</a>
     <nav class="main">
-      <a href="#about" data-route="about">About</a>
-      <a href="#contact" data-route="contact">Contact</a>
+      <a href="/about" data-route="about">About</a>
+      <a href="/contact" data-route="contact">Contact</a>
     </nav>
     <button id="burger" aria-label="Menu" onclick="toggleMenu()"><i></i><i></i></button>
   </div>
 </header>
 <div id="mmenu">
   <nav>
-    <span class="link-row"><a href="#about" data-route="about">About</a></span>
-    <span class="link-row"><a href="#contact" data-route="contact">Contact</a></span>
+    <span class="link-row"><a href="/about" data-route="about">About</a></span>
+    <span class="link-row"><a href="/contact" data-route="contact">Contact</a></span>
   </nav>
 </div>
 
@@ -216,7 +216,7 @@ footer{flex:none}
 <main class="view" id="view-home">
   <div class="hero-home">
     <h1 class="hero-quote" aria-label="Global technology investor across buyouts, growth equity, and venture"><span class="qw"><span class="qi" style="--d:0s">Global</span></span> <span class="qw"><span class="qi" style="--d:.09s">technology</span></span> <span class="qw"><span class="qi" style="--d:.18s">investor</span></span> <span class="qw g"><span class="qi" style="--d:.27s">across</span></span> <span class="qw g"><span class="qi" style="--d:.36s">buyouts,</span></span> <span class="qw g"><span class="qi" style="--d:.45s">growth</span></span> <span class="qw g"><span class="qi" style="--d:.54s">equity,</span></span> <span class="qw g"><span class="qi" style="--d:.63s">and</span></span> <span class="qw g"><span class="qi" style="--d:.72s">venture</span></span></h1>
-    <a class="hero-btn" href="#about" data-route="about">Learn More</a>
+    <a class="hero-btn" href="/about" data-route="about">Learn More</a>
   </div>
 </main>
 
@@ -323,12 +323,12 @@ footer{flex:none}
 <footer>
   <div class="fwrap">
     <div class="frow">
-      <a href="#home" data-route="home" class="logo">CANYON GLOBAL</a>
+      <a href="/" data-route="home" class="logo">CANYON GLOBAL</a>
       <div class="fmenu">
         <ul>
           <li><a href="https://www.linkedin.com/company/canyon-global" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="#disclaimer" data-route="disclaimer">Disclaimer</a></li>
-          <li><a href="#privacy" data-route="privacy">Privacy Notice</a></li>
+          <li><a href="/disclaimer" data-route="disclaimer">Disclaimer</a></li>
+          <li><a href="/privacy" data-route="privacy">Privacy Notice</a></li>
         </ul>
       </div>
     </div>
@@ -339,7 +339,7 @@ footer{flex:none}
 </footer>
 
 <script>
-var routes=['home','about','contact','privacy','disclaimer'];
+var routes=['home','about','contact','privacy','disclaimer'];var paths={home:'/',about:'/about',contact:'/contact',privacy:'/privacy',disclaimer:'/disclaimer'};
 var burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
 function toggleMenu(){var open=mmenu.classList.toggle('open');burger.classList.toggle('x',open);document.body.classList.toggle('menu-open',open);document.body.style.overflow=open?'hidden':'';}
 function closeMenu(){mmenu.classList.remove('open');burger.classList.remove('x');document.body.classList.remove('menu-open');document.body.style.overflow='';}
@@ -348,7 +348,7 @@ function show(route){
   closeMenu();
   document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});
   var el=document.getElementById('view-'+route); if(el)el.classList.add('active');
-  document.body.setAttribute('data-route',route);
+  document.body.setAttribute('data-route',route);if(location.hash)history.replaceState(null,'',paths[route]);
   document.documentElement.style.background=(route==='privacy'||route==='disclaimer')?'#fff':'#000';
   document.title=route==='home'?'Canyon Global | Global Technology Investor':(route==='about'?'About Canyon - Canyon Global':(route==='contact'?'Contact - Canyon Global':(route==='privacy'?'Privacy Notice - Canyon Global':'Disclaimer - Canyon Global')));
   document.querySelectorAll('#mmenu a[data-route]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-route')===route)});
@@ -358,7 +358,8 @@ function show(route){
   if(route==='contact'){ct.classList.remove('anim');void ct.offsetWidth;ct.classList.add('anim');}
   window.scrollTo(0,0);
 }
-document.querySelectorAll('a[data-route]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var r=a.getAttribute('data-route');if(('#'+r)===location.hash)show(r);else location.hash=r;})});
+document.querySelectorAll('a[data-route]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var r=a.getAttribute('data-route');if(location.pathname===paths[r])show(r);else{history.pushState(null,'',paths[r]);show(r);}})});
+window.addEventListener('popstate',function(){show(routeFromLocation())});
 window.addEventListener('hashchange',function(){show(routeFromLocation())});
 /* TB: header slides away when scrolling down, returns on scroll up */
 var lastY=0;
