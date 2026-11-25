@@ -188,6 +188,9 @@ body.past[data-route="privacy"] header,body.past[data-route="disclaimer"] header
 #view-contact.anim .offices-panel{animation:panelin .9s cubic-bezier(.22,1,.36,1) both}
 @media(prefers-reduced-motion:reduce){#view-contact.anim .offices-panel{animation:none}}
 @media(prefers-reduced-motion:reduce){#view-about.anim .acc{animation:none}}
+body{display:flex;flex-direction:column;min-height:100vh}
+main.view.active{flex:1 0 auto}
+footer{flex:none}
 </style>
 </head>
 <body data-route="home">
