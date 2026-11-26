@@ -261,6 +261,16 @@ header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-in
 .offices-panel .eyebrow{color:#DEDEDE}
 .offices-panel li{border-top-color:rgba(255,255,255,.14)}
 .offices-panel li span{background:linear-gradient(90deg,#DEDEDE 0%,#868686 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* ===== Footer all black, no line, no logo ===== */
+footer{background:#000;border-radius:0;color:#EDEDED}
+.frow{justify-content:flex-end}
+.fmenu a{color:#DEDEDE}
+.fcopy{color:#a6a6a6}
+.flegal{color:#868686}
+body[data-route="privacy"] .fmenu a,body[data-route="disclaimer"] .fmenu a{color:#DEDEDE}
+body[data-route="privacy"] .fcopy,body[data-route="disclaimer"] .fcopy{color:#a6a6a6}
+body[data-route="privacy"] .flegal,body[data-route="disclaimer"] .flegal{color:#868686}
 </style>
 </head>
 <body data-route="home">
@@ -389,10 +399,8 @@ header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-in
 <footer>
   <div class="fwrap">
     <div class="frow">
-      <a href="/" data-route="home" class="logo">CANYON GLOBAL</a>
       <div class="fmenu">
         <ul>
-          <li><a href="https://www.linkedin.com/company/canyon-global" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="/disclaimer" data-route="disclaimer">Disclaimer</a></li>
           <li><a href="/privacy" data-route="privacy">Privacy Notice</a></li>
         </ul>
