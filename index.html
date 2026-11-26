@@ -245,6 +245,9 @@ header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-in
 .hero-home{min-height:calc(100lvh + env(safe-area-inset-bottom))}
 /* Home, mobile: footer starts well below the first screen — never sticks out at rest */
 @media(max-width:900px){body[data-route="home"] footer{margin-top:12vh}}
+/* Short pages: the view fills at least one full screen, so the footer always starts below the fold */
+.view{min-height:100lvh}
+@media(max-width:900px){#view-about,#view-contact,#view-privacy,#view-disclaimer{min-height:112lvh}}
 </style>
 </head>
 <body data-route="home">
