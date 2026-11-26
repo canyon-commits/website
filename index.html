@@ -248,6 +248,10 @@ header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-in
 /* Short pages: the view fills at least one full screen, so the footer always starts below the fold */
 .view{min-height:100lvh}
 @media(max-width:900px){#view-about,#view-contact,#view-privacy,#view-disclaimer{min-height:112lvh}}
+/* Page titles centred (About, Contact); body text stays left */
+#view-about .hero-page .wrap-narrow{text-align:center}
+#view-contact .contact-grid h1{grid-column:1/-1;justify-self:center}
+#view-contact .contact-grid{row-gap:30px}
 </style>
 </head>
 <body data-route="home">
@@ -305,8 +309,8 @@ header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-in
 <main class="view subpage" id="view-contact">
   <section class="contact-sec">
     <div class="wrap-narrow contact-grid">
+      <h1>Contact</h1>
       <div>
-        <h1>Contact</h1>
         <p class="lead">For general inquiries, please contact us at <a href="mailto:info@canyongm.com">info@canyongm.com</a>.</p>
       </div>
       <div class="offices-panel">
