@@ -243,6 +243,8 @@ header .logo,.frow .logo{font-size:22px}
 /* Edge-to-edge (viewport-fit=cover): header clears the top safe area, hero covers the full screen incl. the browser-bar zone */
 header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-inset-top)}
 .hero-home{min-height:calc(100lvh + env(safe-area-inset-bottom))}
+/* Home, mobile: footer starts well below the first screen — never sticks out at rest */
+@media(max-width:900px){body[data-route="home"] footer{margin-top:12vh}}
 </style>
 </head>
 <body data-route="home">
