@@ -252,6 +252,15 @@ header{height:calc(80px + env(safe-area-inset-top));padding-top:env(safe-area-in
 #view-about .hero-page .wrap-narrow{text-align:center}
 #view-contact .contact-grid h1{grid-column:1/-1;justify-self:center}
 #view-contact .contact-grid{row-gap:30px}
+
+/* ===== Panels like x.ai — flat dark fill, no border ===== */
+.acc,.offices-panel{background:#1B1B1B}
+.acc-head h2{background:linear-gradient(90deg,#DEDEDE 0%,#868686 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.acc-ic::before,.acc-ic::after{background:#fff}
+.acc-body p{color:#a6a6a6}
+.offices-panel .eyebrow{color:#DEDEDE}
+.offices-panel li{border-top-color:rgba(255,255,255,.14)}
+.offices-panel li span{background:linear-gradient(90deg,#DEDEDE 0%,#868686 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 </style>
 </head>
 <body data-route="home">
