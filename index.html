@@ -283,6 +283,9 @@ body[data-route="privacy"] .flegal,body[data-route="disclaimer"] .flegal{color:#
 .acc{background:transparent;border-radius:0}
 .acc-head{padding-left:0;padding-right:0}
 .acc-body p{padding-left:0;padding-right:0}
+
+/* ===== About — body text white ===== */
+.acc-body p{color:#fff}
 </style>
 </head>
 <body data-route="home">
@@ -445,7 +448,7 @@ window.addEventListener('hashchange',function(){show(routeFromLocation())});
 var lastY=0;
 window.addEventListener('scroll',function(){var y=window.scrollY;document.body.classList.toggle('past',y>40);document.body.classList.toggle('scrolled',y>140&&y>lastY);lastY=y},{passive:true});
 /* About dropdown panels */
-document.querySelectorAll('.acc-head').forEach(function(hd){function t(){var s=hd.closest('.acc');var o=s.classList.toggle('open');hd.setAttribute('aria-expanded',o)}hd.addEventListener('click',t);hd.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})});
+document.querySelectorAll('.acc-head').forEach(function(hd){function t(){var s=hd.closest('.acc');var was=s.classList.contains('open');document.querySelectorAll('.acc.open').forEach(function(a){a.classList.remove('open');a.querySelector('.acc-head').setAttribute('aria-expanded','false')});if(!was){s.classList.add('open');hd.setAttribute('aria-expanded','true')}}hd.addEventListener('click',t);hd.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})});
 show(routeFromLocation());
 </script>
 <script>
