@@ -235,6 +235,9 @@ header .logo,.frow .logo{font-size:22px}
 .acc-head h2{font-weight:500;letter-spacing:0}
 .offices-panel li{font-weight:500;letter-spacing:0}
 .eyebrow{letter-spacing:0}
+/* Footer content clears the phone browser bar / safe area */
+.fwrap{padding-bottom:calc(44px + env(safe-area-inset-bottom))}
+@media(max-width:900px){.fwrap{padding-bottom:calc(40px + env(safe-area-inset-bottom))}}
 </style>
 </head>
 <body data-route="home">
