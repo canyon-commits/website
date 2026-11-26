@@ -51,21 +51,21 @@ nav.main a:hover{color:#fff}
 @media(max-width:1023px){nav.main{display:none}#burger{display:block}}
 
 /* ===== Mobile menu — full-screen black overlay, TB-style thin caps links ===== */
-#mmenu{position:fixed;inset:0;background:radial-gradient(120% 60% at 50% 0%,rgba(255,255,255,.20),rgba(255,255,255,0) 60%),radial-gradient(100% 55% at 50% 108%,rgba(0,0,0,.16),rgba(0,0,0,0) 62%),linear-gradient(180deg,#C9C4C2 0%,#C0BAB8 45%,#B3AEAB 78%,#AAA5A2 100%);z-index:9998;transform:none;clip-path:inset(0 0 100% 0);-webkit-clip-path:inset(0 0 100% 0);pointer-events:none;visibility:hidden;transition:clip-path .55s cubic-bezier(.22,1,.36,1),-webkit-clip-path .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s;display:flex;flex-direction:column;justify-content:flex-start;padding:120px 4.5vw 0;overflow:hidden;touch-action:manipulation}
+#mmenu{position:fixed;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.05) 0%,rgba(255,255,255,0) 42%),radial-gradient(120% 90% at 85% 0%,#282828 0%,rgba(40,40,40,0) 54%),radial-gradient(90% 70% at 10% 6%,#1C1C1C 0%,rgba(0,0,0,0) 55%),radial-gradient(105% 85% at 8% 105%,#1E1E1E 0%,rgba(0,0,0,0) 56%),radial-gradient(75% 60% at 28% 26%,#171717 0%,rgba(0,0,0,0) 62%),radial-gradient(60% 50% at 68% 78%,#121212 0%,rgba(0,0,0,0) 60%),radial-gradient(145% 115% at 50% 42%,rgba(0,0,0,0) 52%,rgba(0,0,0,.52) 100%),linear-gradient(180deg,#0B0B0B 0%,#000 55%,#070707 100%);z-index:9998;transform:none;clip-path:inset(0 0 100% 0);-webkit-clip-path:inset(0 0 100% 0);pointer-events:none;visibility:hidden;transition:clip-path .55s cubic-bezier(.22,1,.36,1),-webkit-clip-path .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s;display:flex;flex-direction:column;justify-content:flex-start;padding:120px 4.5vw 0;overflow:hidden;touch-action:manipulation}
 #mmenu.open{transform:none;clip-path:inset(0 0 0% 0);-webkit-clip-path:inset(0 0 0% 0);pointer-events:auto;visibility:visible;transition:clip-path .55s cubic-bezier(.22,1,.36,1),-webkit-clip-path .55s cubic-bezier(.22,1,.36,1),visibility 0s}
 #mmenu nav{margin:6vh 0 0}
-#mmenu .link-row{display:block;border-bottom:1px solid rgba(0,0,0,.16);opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+#mmenu .link-row{display:block;border-bottom:1px solid rgba(255,255,255,.16);opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
 #mmenu.open .link-row{opacity:1;transform:none}
 #mmenu.open .link-row:nth-child(1){transition-delay:.16s}
 #mmenu.open .link-row:nth-child(2){transition-delay:.24s}
-#mmenu .link-row a{display:block;font-family:"XVF","Camber","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:500;font-size:20px;line-height:1.25;padding:26px 2px;color:#000;text-transform:uppercase;letter-spacing:.14em;transition:opacity .25s ease}
+#mmenu .link-row a{display:block;font-family:"XVF","Camber","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:500;font-size:20px;line-height:1.25;padding:26px 2px;color:#fff;text-transform:uppercase;letter-spacing:.14em;transition:opacity .25s ease}
 #mmenu .link-row a:hover{opacity:.55}
 #mmenu .mfoot{color:#8a8a92;font-size:15px;line-height:1.25;padding-bottom:34px}
 #mmenu .mfoot a{color:#fff}
 
 body.menu-open header{background:transparent;transform:none}
-body.menu-open .logo{color:#000}
-body.menu-open #burger i{background:#000}
+body.menu-open .logo{color:#fff}
+body.menu-open #burger i{background:#fff}
 
 /* ===== Views ===== */
 .view{display:none}
@@ -166,6 +166,9 @@ body[data-route="privacy"] .logo,body[data-route="disclaimer"] .logo{color:#000}
 body[data-route="privacy"] nav.main a,body[data-route="disclaimer"] nav.main a{color:#333}
 body[data-route="privacy"] #burger i,body[data-route="disclaimer"] #burger i{background:#000}
 body.past[data-route="privacy"] header,body.past[data-route="disclaimer"] header{background:#FAF9F7}
+body[data-route="privacy"].menu-open .logo,body[data-route="disclaimer"].menu-open .logo{color:#fff;-webkit-text-fill-color:#fff}
+body[data-route="privacy"].menu-open #burger i,body[data-route="disclaimer"].menu-open #burger i{background:#fff}
+body.past[data-route="privacy"].menu-open header,body.past[data-route="disclaimer"].menu-open header{background:transparent}
 .rule{height:1px;background:#A3A3A3;margin-bottom:56px}
 @media(max-width:900px){.hero-short h1{font-size:clamp(29px,5.1vw,72px)}.hero-page h1,.contact-grid h1{font-size:clamp(34px,5.8vw,88px)}.acc-head h2,.offices-panel li{font-size:22px}.offices-panel li{font-family:"XVF","Camber","PingFang SC","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300}}
 @media(min-width:901px){.hero-quote{font-size:clamp(44px,4.2vw,58px);max-width:1080px}.hero-page{padding:150px 0 70px}.hero-page h1{font-size:clamp(40px,4.6vw,64px)}.hero-short h1{font-size:clamp(34px,3.6vw,50px)}.acc{margin-bottom:20px}.acc-head{padding:30px 44px}.acc-head h2{font-size:clamp(22px,2vw,30px)}.acc-ic{width:28px;height:28px}.acc-body p{padding:0 44px 40px;max-width:760px}.panels{padding-bottom:90px}.contact-grid h1{font-size:38px}.offices-panel{padding:44px 48px}.offices-panel li{font-size:clamp(22px,2vw,30px);padding:16px 0}.fwrap{padding-top:80px}.wrap-narrow.panels{max-width:1060px}#view-about .wrap-narrow,#view-contact .wrap-narrow{max-width:1060px}#view-about .hero-page{padding-top:128px}.contact-sec{padding-top:150px}}
@@ -220,7 +223,7 @@ header .logo,.frow .logo{font-size:22px}
 .intro p,.acc-body p,.contact-grid .lead,.text-col p{font-size:16px;letter-spacing:0}
 .text-col h2{font-weight:500;letter-spacing:0}
 #mmenu .link-row a{font-weight:500;letter-spacing:0;font-size:42px}
-#mmenu .link-row a span{background:linear-gradient(90deg,#141414 0%,#6E6E6E 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#mmenu .link-row a span{background:linear-gradient(90deg,#DEDEDE 0%,#868686 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .fmenu a,.fcopy{font-size:12px;letter-spacing:0}
 @media(min-width:768px){
   header .logo,.frow .logo{font-size:27px}
