@@ -287,13 +287,20 @@ body[data-route="privacy"] .flegal,body[data-route="disclaimer"] .flegal{color:#
 
 /* ===== About — body text white ===== */
 .acc-body p{color:#fff}
+
+/* ===== Logo: SVG wordmark ===== */
+header .logo img{display:block;height:16px;width:auto}
+@media(min-width:768px){header .logo img{height:19px}}
+@media(max-width:359px){header .logo img{height:14px}}
+body[data-route="privacy"] .logo img,body[data-route="disclaimer"] .logo img{filter:invert(1)}
+body[data-route="privacy"].menu-open .logo img,body[data-route="disclaimer"].menu-open .logo img{filter:none}
 </style>
 </head>
 <body data-route="home">
 
 <header>
   <div class="hbar">
-    <a href="/" data-route="home" class="logo">CANYON GLOBAL</a>
+    <a href="/" data-route="home" class="logo"><img src="/canyon-global-oneline.svg" alt="Canyon Global"></a>
     <button id="burger" aria-label="Menu" onclick="toggleMenu()"><i></i><i></i></button>
   </div>
 </header>
